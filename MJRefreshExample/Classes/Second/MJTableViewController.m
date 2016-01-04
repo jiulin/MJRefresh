@@ -20,6 +20,8 @@
 #import "MJDIYHeader.h"
 #import "MJDIYAutoFooter.h"
 #import "MJDIYBackFooter.h"
+#import "MJActivityViewHeader.h"
+
 
 static const CGFloat MJDuration = 2.0;
 /**
@@ -127,6 +129,12 @@ static const CGFloat MJDuration = 2.0;
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     self.tableView.mj_header = [MJDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+}
+
+#pragma mark UITableView + 下拉刷新 自定义刷新控件
+- (void)example07{
+    self.tableView.mj_header = [MJActivityViewHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.mj_header beginRefreshing];
 }
 
