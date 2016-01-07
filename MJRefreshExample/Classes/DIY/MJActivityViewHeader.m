@@ -72,7 +72,7 @@
             break;
             
         case MJRefreshStateWillRefresh:
-            [self.indicateview beginRefreshing];
+//            [self.indicateview beginRefreshing];
             
             break;
             

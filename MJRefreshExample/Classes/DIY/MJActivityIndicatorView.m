@@ -38,10 +38,12 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     self.animationLayer.anchorPoint = CGPointMake(0, 0.0);
     [self.layer addSublayer:self.animationLayer];
     
-    self.tintColor = self.tintColor = [UIColor colorWithRed:1.0f green:74.0f/255.0f blue:146.0f/255.0f alpha:1.000];
-    
     [self createAnimationLayers];
     [self createStandbyLayers];
+    
+    self.tintColor = self.tintColor = [UIColor colorWithRed:1.0f green:74.0f/255.0f blue:146.0f/255.0f alpha:1.000];
+    
+    
     
     self.animationLayer.hidden = YES;
 }
@@ -93,7 +95,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
         return;
     }
     
-    CGFloat showingOffset = timeOffset * 12.0 - 1;
+    CGFloat showingOffset = timeOffset * 12.0 ;
     
     for (int i = 0; i < 12; i ++) {
         CALayer *layer = self.standbyLayersArray[i];
@@ -157,7 +159,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     for (int i = 0; i < 12; i ++) {
         CALayer *layer = [self createLayer];
         
-        layer.transform = CATransform3DMakeRotation(M_PI / 6 * i, 0, 0, 1);
+        layer.transform = CATransform3DMakeRotation(M_PI / 6 * i+M_PI, 0, 0, 1);
         
         [self.animationLayer addSublayer:layer];
         
@@ -206,6 +208,7 @@ static NSString* const kXHRotationAnimation = @"XHRotationAnimation";
     
     self.standbyLayer.hidden = YES;
     self.animationLayer.hidden = NO;
+
 }
 
 /*
