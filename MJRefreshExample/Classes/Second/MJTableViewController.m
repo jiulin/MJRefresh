@@ -132,7 +132,7 @@ static const CGFloat MJDuration = 2.0;
     [self.tableView.mj_header beginRefreshing];
 }
 
-#pragma mark UITableView + 下拉刷新 自定义刷新控件
+#pragma mark UITableView + 下拉刷新 自定义刷新菊花视图
 - (void)example07{
     self.tableView.mj_header = [MJActivityViewHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.mj_header beginRefreshing];
