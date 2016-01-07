@@ -15,9 +15,6 @@
 
 @implementation MJActivityViewHeader
 
-- (void)startBeginAnimation{
-    [_indicateview beginRefreshing];
-}
 
 - (void)prepare{
     [super prepare];

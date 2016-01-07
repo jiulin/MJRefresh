@@ -9,5 +9,5 @@
 #import "MJRefreshHeader.h"
 
 @interface MJActivityViewHeader : MJRefreshHeader
-- (void)startBeginAnimation;
+
 @end
